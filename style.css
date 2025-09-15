@@ -1,222 +1,426 @@
-/* General Styling */
+/*
+ * Monastery360 - A Digital Heritage Platform
+ * Author: Your Name/Team
+ * Description: Main stylesheet for the Monastery360 website, with
+ * improved UI, color scheme, and typography.
+ */
+
+/* =========================================================================
+   1. General & Typography
+   ========================================================================= */
+
 body {
     font-family: 'Poppins', sans-serif;
-    color: #333;
+    color: #34495e;
+    /* A rich, dark blue-grey for text */
     line-height: 1.6;
-    background-color: rgb(10, 10, 15);
-    /* Slightly less harsh black */
-    transition: background-color 0.5s ease-in-out;
+    background-color: #f0f4f7;
+    /* A soft, light blue-grey background */
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
-/* Navbar Styling */
-.navbar-brand {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    text-shadow: 0 0 5px rgba(0, 255, 255, 0.5);
+    color: #2c3e50;
+    /* A slightly darker heading color */
+    margin-bottom: 0.5em;
 }
+
+section h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #c0392b;
+    /* A bold red for main headings */
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.lead {
+    color: #7f8c8d;
+    /* A subtle grey for lead paragraphs */
+}
+
+/* =========================================================================
+   2. Navbar Styling
+   ========================================================================= */
 
 .navbar {
-    background-color: rgba(0, 0, 0, 0.9) !important;
-    box-shadow: 0 2px 8px rgba(0, 255, 255, 0.2);
+    background-color: #ffffff !important;
+    /* Pure white navbar */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #c0392b !important;
 }
 
 .navbar .nav-link {
-    color: #fff !important;
-    transition: color 0.3s, text-shadow 0.3s;
+    color: #34495e !important;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s, background-color 0.3s;
+    border-radius: 5px;
 }
 
 .navbar .nav-link:hover,
 .navbar .nav-link.active {
-    color: #00ffff !important;
-    text-shadow: 0 0 10px #00ffff;
+    color: #c0392b !important;
+    background-color: #ecf0f1;
 }
 
-/* Hero Section - The "pop-up" background with a collage-style image and dramatic animation */
+/* =========================================================================
+   3. Hero Section
+   ========================================================================= */
+
 .hero-section {
-    background:
-        linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
-        url('https://source.unsplash.com/1920x1080/?sikkim,monastery,himalayas,temple');
-    background-size: 130%;
-    /* Start zoomed in */
-    background-position: center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url('back.jpg') no-repeat center center;
+    background-size: cover;
     height: 100vh;
+    /* Reduced height for better user experience */
     position: relative;
-    overflow: hidden;
-    z-index: 1;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: backgroundMoveAndZoom 100s linear infinite alternate;
-    /* More active animation */
-}
-
-/* New keyframes for a combined movement and zoom effect */
-@keyframes backgroundMoveAndZoom {
-    0% {
-        background-size: 130%;
-        background-position: 50% 50%;
-    }
-
-    25% {
-        background-size: 140%;
-        background-position: 60% 40%;
-    }
-
-    50% {
-        background-size: 130%;
-        background-position: 50% 50%;
-    }
-
-    75% {
-        background-size: 140%;
-        background-position: 40% 60%;
-    }
-
-    100% {
-        background-size: 130%;
-        background-position: 50% 50%;
-    }
-}
-
-/* Hero Content - Enhanced for readability and visual impact */
-.hero-content {
-    position: relative;
-    z-index: 10;
-    background-color: rgba(0, 0, 0, 0.7);
-    padding: 3.5rem 5rem;
-    border-radius: 20px;
-    box-shadow: 0 0 50px rgba(0, 255, 255, 0.9), 0 0 30px rgba(255, 0, 255, 0.6);
-    border: 2px solid rgba(0, 255, 255, 0.8);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    text-align: center;
 }
 
 .hero-content h1 {
     font-size: 4rem;
-    font-weight: 800;
-    text-shadow: 0 0 25px #00ffff, 0 0 40px #00ffff, 0 0 60px rgba(0, 255, 255, 0.8);
+    font-weight: 900;
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .hero-content p {
     font-size: 1.5rem;
-    text-shadow: 0 0 15px #ff00ff, 0 0 25px rgba(255, 0, 255, 0.8);
+    font-weight: 400;
+    color: #e0e6ea;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    max-width: 700px;
+    margin: 0 auto 2rem;
 }
 
+/* =========================================================================
+   4. Buttons
+   ========================================================================= */
+
 .btn-primary {
-    background-color: #00ffff;
-    border-color: #00ffff;
-    color: #000;
-    font-weight: 700;
-    padding: 15px 40px;
+    background-color: #c0392b;
+    /* Main red color */
+    border-color: #c0392b;
+    color: #fff;
+    font-weight: 600;
+    padding: 12px 30px;
     border-radius: 50px;
-    box-shadow: 0 0 25px rgba(0, 255, 255, 0.9);
-    transition: all 0.4s ease;
+    /* Pill-shaped buttons */
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn-primary:hover {
-    background-color: #ff00ff;
-    border-color: #ff00ff;
-    color: #fff;
-    box-shadow: 0 0 30px rgba(255, 0, 255, 1);
-    transform: translateY(-5px) scale(1.05);
-}
-
-/* Main Content Sections - Style to make them "pop" more */
-.content-section {
-    padding: 100px 0;
-    background-color: rgba(255, 255, 255, 0.99);
-    margin: 60px auto;
-    max-width: 1280px;
-    border-radius: 25px;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(255, 255, 255, 0.2) inset;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-section h2 {
-    font-weight: 800;
-    color: #003333;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
-}
-
-/* Cards - Enhanced styling */
-.card {
-    border: none;
-    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-    background-color: #ffffff;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-}
-
-.card:hover {
-    transform: translateY(-15px) scale(1.02);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-}
-
-.card-img-top {
-    height: auto;
-    object-fit: cover;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    background-color: #a93226;
+    /* Darker red on hover */
+    border-color: #a93226;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 .btn-dark {
-    background-color: #2c3e50;
-    border-color: #2c3e50;
-    transition: background-color 0.3s;
-    font-weight: 600;
+    background-color: #34495e;
+    /* Dark blue-grey for secondary actions */
+    border-color: #34495e;
+    color: #fff;
+    font-weight: 500;
+    border-radius: 50px;
+    transition: all 0.3s;
 }
 
 .btn-dark:hover {
-    background-color: #1a242f;
-    border-color: #1a242f;
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-/* Map and Archives Placeholders */
+/* =========================================================================
+   5. Main Content Sections
+   ========================================================================= */
+
+.content-section {
+    padding: 80px 0;
+    background-color: #ffffff;
+    margin: 30px auto;
+    max-width: 1300px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+}
+
+/* =========================================================================
+   6. Card Styling
+   ========================================================================= */
+
+.card {
+    border: 1px solid #e0e6ea;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.card-img-top {
+    height: 330px;
+    width: 100%;
+    /* Ensures image takes full width of card */
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.card-text {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+/* =========================================================================
+   7. Map & Archives
+   ========================================================================= */
+
 .map-placeholder,
 .archives-placeholder {
-    height: auto;
-    background-color: #fdfeff;
     border-radius: 15px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
-/* Import the Poppins font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+iframe {
+    width: 100%;
+    height: 450px;
+    border: none !important;
+}
 
-/* --- Footer Styling --- */
+.archives-img {
+    height: 650px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.archive-features ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.archive-features ul li {
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    color: #34495e;
+}
+
+.archive-features ul li i {
+    color: #c0392b;
+    margin-right: 10px;
+    font-size: 1.25rem;
+}
+
+/* =========================================================================
+   8. Cultural Calendar
+   ========================================================================= */
+
+.calendar-container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    color: #34495e;
+}
+
+.calendar-header h3 {
+    font-weight: 700;
+    color: #c0392b;
+    font-size: 1.75rem;
+}
+
+.calendar-header button {
+    background-color: transparent;
+    border: none;
+    color: #c0392b;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+    padding: 0.5rem;
+}
+
+.calendar-header button:hover {
+    color: #e67e22;
+    /* A warm orange on hover */
+}
+
+.calendar-weekdays {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    font-weight: 600;
+    color: #7f8c8d;
+    border-bottom: 1px solid #ecf0f1;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.weekday {
+    text-align: center;
+}
+
+.calendar-dates {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 15px;
+}
+
+.calendar-dates .date-cell {
+    position: relative;
+    padding: 10px 5px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1 / 1;
+    font-weight: 600;
+    background-color: #f8f8f8;
+}
+
+.calendar-dates .date-cell:hover:not(.empty):not(.today) {
+    background-color: #e0e6ea;
+    transform: translateY(-2px);
+}
+
+.calendar-dates .empty {
+    background-color: transparent;
+    cursor: default;
+    visibility: hidden;
+}
+
+.calendar-dates .today {
+    background-color: #c0392b;
+    color: #fff;
+    font-weight: 800;
+    box-shadow: 0 4px 10px rgba(192, 57, 43, 0.3);
+}
+
+.calendar-dates .event {
+    border: 2px solid #e67e22;
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.2);
+}
+
+/* =========================================================================
+   9. Footer
+   ========================================================================= */
+
 footer {
-    background-color: rgba(0, 0, 0, 0.95) !important;
-    box-shadow: 0 -5px 15px rgba(0, 255, 255, 0.3);
-    border-top: 2px solid rgba(0, 255, 255, 0.2);
-    font-family: 'Poppins', sans-serif;
-    /* Apply the new font here */
-    padding: 2.5rem 0;
-    /* Add more padding for a better feel */
+    background-color: #2c3e50 !important;
+    /* Dark blue-grey footer */
+    color: #ecf0f1;
+    padding: 3rem 0;
+    text-align: center;
 }
 
-/* Style the paragraph text within the footer */
 footer p {
-    font-size: 1rem;
-    font-weight: 400;
-    /* Medium font weight */
-    color: #f8f9fa;
-    /* Light color for contrast */
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    /* Subtle shadow for readability */
-    margin-bottom: 0.5rem;
-    /* Space between the two paragraphs */
+    color: #bdc3c7;
+    margin-bottom: 1rem;
 }
 
-/* Style the links and icons */
 footer a {
-    color: #00ffff !important;
-    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
-    transition: all 0.3s ease-in-out;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
 }
 
 footer a:hover {
-    color: #ff00ff !important;
-    text-shadow: 0 0 15px rgba(255, 0, 255, 0.9);
+    color: #e67e22 !important;
+    /* Orange hover for contrast */
     transform: scale(1.1);
-    /* Slightly enlarge the icon on hover */
+}
+
+/* =========================================================================
+   10. Responsiveness
+   ========================================================================= */
+
+@media (max-width: 992px) {
+    .content-section {
+        margin: 20px auto;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.25rem;
+    }
+
+    .archives-img,
+    iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding: 50px 0;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .navbar .nav-link {
+        text-align: center;
+    }
+
+    .calendar-container {
+        padding: 1.5rem;
+    }
+
+    .card-img-top {
+        height: 200px;
+    }
+
+    .archives-img,
+    iframe {
+        height: 300px;
+    }
 }

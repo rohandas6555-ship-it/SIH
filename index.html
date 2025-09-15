@@ -25,7 +25,6 @@
                     <li class="nav-item"><a class="nav-link" href="#interactive-map">Interactive Map</a></li>
                     <li class="nav-item"><a class="nav-link" href="#digital-archives">Archives</a></li>
                     <li class="nav-item"><a class="nav-link" href="#cultural-calendar">Calendar</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#mobile-app">Mobile App</a></li>
                 </ul>
             </div>
         </div>
@@ -113,35 +112,68 @@
                 </div>
             </div>
         </section>
-
         <section id="digital-archives" class="py-5 content-section">
             <div class="container">
-                <h2 class="text-center mb-5">Digital Archives: A Glimpse into the Past</h2>
+                <h2 class="text-center mb-5">Digital Archives: Glimpses into Sacred History</h2>
                 <div class="row align-items-center flex-row-reverse">
                     <div class="col-lg-7 mb-4 mb-lg-0">
                         <div class="archives-placeholder">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1zL8LUhkhtV2wtzJQDK0NQOpBlcaNkWfjtg&s"
-                                class="img-fluid rounded shadow-lg" alt="Ancient Buddhist manuscript">
+                            <img src="https://cdn.kastatic.org/ka-perseus-images/24677b879280131b26d16336a312feafe2a07860.jpg"
+                                class="img-fluid rounded shadow-lg archives-img"
+                                alt="The ancient Gandhara Buddhist scroll">
                         </div>
                     </div>
                     <div class="col-lg-5">
-                        <p class="lead">Explore a priceless collection of ancient artifacts and manuscripts, now
-                            digitized for preservation and research.</p>
-                        <ul>
-                            <li>High-resolution scans of rare texts and murals.</li>
-                            <li>AI-powered search for easy content discovery.</li>
-                            <li>A living library maintained by the community.</li>
-                        </ul>
-                        <a href="#" class="btn btn-primary">Browse Archives <i class="fas fa-book"></i></a>
+                        <p class="lead text-muted">A priceless collection of ancient artifacts and manuscripts,
+                            meticulously
+                            digitized for preservation and global research.</p>
+                        <div class="archive-features">
+                            <h5 class="fw-bold mb-3">Key Features:</h5>
+                            <ul>
+                                <li><i class="fas fa-scroll me-2"></i>High-resolution scans of rare texts and murals.
+                                </li>
+                                <li><i class="fas fa-search-plus me-2"></i>AI-powered search for easy content discovery.
+                                </li>
+                                <li><i class="fas fa-users-cog me-2"></i>A living library maintained by the community.
+                                </li>
+                            </ul>
+                        </div>
+                        <a href="#" class="btn btn-primary mt-3">Browse Archives <i class="fas fa-book-open"></i></a>
                     </div>
                 </div>
             </div>
         </section>
+        <section id="cultural-calendar" class="py-5 content-section">
+            <div class="container">
+                <h2 class="text-center mb-5">Cultural Calendar of Events</h2>
+                <div class="calendar-container">
+                    <div class="calendar-header d-flex justify-content-between align-items-center mb-3">
+                        <button id="prevMonth" class="btn btn-primary btn-sm"><i
+                                class="fas fa-chevron-left"></i></button>
+                        <h3 id="currentMonthYear" class="mb-0"></h3>
+                        <button id="nextMonth" class="btn btn-primary btn-sm"><i
+                                class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-weekdays d-flex text-center mb-2">
+                        <div class="weekday">Sun</div>
+                        <div class="weekday">Mon</div>
+                        <div class="weekday">Tue</div>
+                        <div class="weekday">Wed</div>
+                        <div class="weekday">Thu</div>
+                        <div class="weekday">Fri</div>
+                        <div class="weekday">Sat</div>
+                    </div>
+                    <div id="calendar-dates" class="calendar-dates d-grid text-center">
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <footer class="bg-dark text-white text-center py-4">
         <div class="container">
-            <p>&copy; 2025 Monastery360. A project by TEAM HELLO WORLD , Narula Institute of Technology.</p>
+            <p>© 2025 Monastery360. A project by TEAM HELLO WORLD , Narula Institute of Technology.</p>
             <p>
                 <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
                 <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
